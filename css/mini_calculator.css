@@ -1,0 +1,89 @@
+.container {
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main {
+    width: 15rem;
+    height: auto;
+    /* background: url(../img/2560-x-1440-car-jox19ekr1xtx8o5b.jpg);
+    background-repeat: no-repeat;
+    background-size: cover; */
+    background-color: rgb(209, 122, 90);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: all ease-in-out .95s;
+    gap: 4px;
+    padding: 20px 0;
+}
+
+.main:hover {
+    /* transform: rotate(360deg); */
+    box-shadow: 0px 0px 4px 1px rgb(104, 97, 97);
+
+}
+
+h3 {
+    color: #fafafa;
+    display: flex;
+    justify-content: center;
+    margin-top: 0;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.numbers {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.numbers input {
+    margin-top: 8px;
+    margin-bottom: 25px;
+}
+
+label {
+    color: #ffffff;
+    font-size: .85rem;
+}
+
+.buttons {
+    display: flex;
+    justify-content: start;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+button {
+    transition: all ease-in-out.2s;
+}
+
+.buttons button:hover {
+    box-shadow: 0px 0px 4px 1px rgb(193, 186, 186);
+}
+
+.ans input {
+    margin-top: 8px;
+}
+
+#reset {
+    /* width: 80px; */
+    height: auto;
+    padding: 6px 17px;
+    margin-top: 20px;
+    background-color: rgba(200, 255, 251, 0.829);
+    border: none;
+    border-radius: 8px;
+    font-size: .8rem;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 500;
+}

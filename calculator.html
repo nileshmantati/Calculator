@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="css/calculator.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="main rounded-4 mt-5 py-4 px-4">
+            <!-- <h3>Calculator</h3> -->
+            <form action=" #" onreset="reset()"
+                class="d-flex flex-column justify-content-center align-items-center row-gap-3">
+                <div class="getvalue w-100 h-auto d-flex flex-column justify-content-center">
+                    <input type="text" name="" value="" id="num" class="border-0 rounded-1 text-end">
+                </div>
+                <div class="numbers_buttons col-12 d-flex column-gap-3">
+                    <div class="numbers col d-flex flex-wrap row-gap-2 column-gap-1 justify-content-between">
+                        <button onclick="addDisplay('7')" class="col-3 border-0 rounded-2">7</button>
+                        <button onclick="addDisplay('8')" class="col-3 border-0 rounded-2">8</button>
+                        <button onclick="addDisplay('9')" class="col-3 border-0 rounded-2">9</button>
+                        <button onclick="addDisplay('4')" class="col-3 border-0 rounded-2">4</button>
+                        <button onclick="addDisplay('5')" class="col-3 border-0 rounded-2">5</button>
+                        <button onclick="addDisplay('6')" class="col-3 border-0 rounded-2">6</button>
+                        <button onclick="addDisplay('1')" class="col-3 border-0 rounded-2">1</button>
+                        <button onclick="addDisplay('2')" class="col-3 border-0 rounded-2">2</button>
+                        <button onclick="addDisplay('3')" class="col-3 border-0 rounded-2">3</button>
+                        <button onclick="clearDisplay()" class="col-3 border-0 rounded-2">C</button>
+                        <button onclick="addDisplay('0')" class="col-3 border-0 rounded-2">0</button>
+                        <button onclick="addDisplay('.')" class="col-3 border-0 rounded-2">.</button>
+                    </div>
+                    <div class="buttons col-2 d-flex flex-column row-gap-2">
+                        <button onclick="addDisplay('/')"
+                            class="col border-0 rounded-2 d-flex justify-content-center align-items-center"><i
+                                class="fa-solid fa-divide fa-xs"></i></button>
+                        <button onclick="addDisplay('*')"
+                            class="col border-0 rounded-2 d-flex justify-content-center align-items-center"><i
+                                class="fa-solid fa-xmark fa-xs"></i></button>
+                        <button onclick="addDisplay('-')"
+                            class="col border-0 rounded-2 d-flex justify-content-center align-items-center"><i
+                                class="fa-solid fa-minus fa-xs"></i></button>
+                        <button onclick="addDisplay('+')"
+                            class="col border-0 rounded-2 d-flex justify-content-center align-items-center"><i
+                                class="fa-solid fa-plus fa-xs"></i></button>
+                        <button onclick="calcResult()"
+                            class="col border-0 rounded-2 d-flex justify-content-center align-items-center"><i
+                                class="fa-solid fa-equals"></i></button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- <script>
+        function sumCalculate() {
+            no1 = document.getElementById("num1").value;
+            no2 = document.getElementById("num2").value;
+            sum = parseInt(no1) + parseInt(no2);
+            document.getElementById("ans").value = sum;
+        }
+        function subCalculate() {
+            no1 = document.getElementById("num1").value;
+            no2 = document.getElementById("num2").value;
+            sub = parseInt(no1) - parseInt(no2);
+            document.getElementById("ans").value = sub;
+        }
+        function multiCalculate() {
+            no1 = document.getElementById("num1").value;
+            no2 = document.getElementById("num2").value;
+            multi = parseInt(no1) * parseInt(no2);
+            document.getElementById("ans").value = multi;
+        }
+        function divCalculate() {
+            no1 = document.getElementById("num1").value;
+            no2 = document.getElementById("num2").value;
+            divison = parseInt(no1) / parseInt(no2);
+            document.getElementById("ans").value = divison;
+        }
+        function moduloCalculate() {
+            no1 = document.getElementById("num1").value;
+            no2 = document.getElementById("num2").value;
+            modulo = parseInt(no1) % parseInt(no2);
+            document.getElementById("ans").value = modulo;
+        }
+        function reset() {
+            alert("The form was Reset");
+        }
+    </script> -->
+
+    <!-- With Eval Function -->
+    <!-- <script>
+        let display = document.getElementById('num');
+        function addDisplay(value) {
+            display.value += value;
+        }
+        function clearDisplay() {
+            display.value = '';
+        }
+        function calcResult() {
+            display.value = eval(display.value);
+        }
+    </script> -->
+
+    <!-- Without Eval Function -->
+    <script>
+        function addDisplay(a) {
+            document.getElementById("num").value += a;
+        }
+
+        function check() {
+            let result = [];
+
+            if (document.getElementById("num").value.includes("+")) {
+                result = document.getElementById("num").value.split('+');
+                return parseInt(result[0]) + parseInt(result[1]);
+            }
+
+            else if (document.getElementById("num").value.includes("-")) {
+                result = document.getElementById("num").value.split('-');
+                return parseInt(result[0]) - parseInt(result[1]);
+            }
+
+            else if (document.getElementById("num").value.includes("/")) {
+                result = document.getElementById("num").value.split('/');
+                return parseInt(result[0]) / parseInt(result[1]);
+            }
+
+            else if (document.getElementById("num").value.includes("*")) {
+                result = document.getElementById("num").value.split('*');
+                return parseInt(result[0]) * parseInt(result[1]);
+            }
+        }
+
+        function calcResult() {
+            let a = check()
+            document.getElementById('num').value = a;
+        }
+
+        function clearDisplay() {
+            document.getElementById('num').value = " ";
+        }
+        let add = new Function("num1", "num2", "return num1+num2");
+        document.write(add(2, 5));
+    </script>
+    <script src="js/jquery.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
